@@ -1,7 +1,7 @@
 'use strict';
 var createHash = require('create-hash');
 
-// For a hash function, rippled uses SHA-512 and then truncates the result
+// For a hash function, divvyd uses SHA-512 and then truncates the result
 // to the first 256 bytes. This algorithm, informally called SHA-512Half,
 // provides an output that has comparable security to SHA-256, but runs
 // faster on 64-bit processors.

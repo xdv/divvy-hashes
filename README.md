@@ -1,3 +1,3 @@
-ripple-hashes
+divvy-hashes
 =============
-Methods to hash Ripple objects
+Methods to hash Divvy objects

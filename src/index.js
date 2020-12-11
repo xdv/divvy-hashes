@@ -1,7 +1,7 @@
 'use strict';
 var BigNumber = require('bignumber.js');
-var decodeAddress = require('ripple-address-codec').decodeAddress;
-var binary = require('ripple-binary-codec');
+var decodeAddress = require('divvy-address-codec').decodeAddress;
+var binary = require('divvy-binary-codec');
 var hashprefixes = require('./hashprefixes');
 var SHAMap = require('./shamap').SHAMap;
 var SHAMapTreeNode = require('./shamap').SHAMapTreeNode;
@@ -104,7 +104,7 @@ function computeTrustlineHash(address1, address2, currency) {
   var lowAddressHex = swap ? address2Hex : address1Hex;
   var highAddressHex = swap ? address1Hex : address2Hex;
 
-  var prefix = ledgerSpaceHex('rippleState');
+  var prefix = ledgerSpaceHex('divvyState');
   return hash(prefix + lowAddressHex + highAddressHex +
               currencyToHex(currency));
 }
@@ -134,7 +134,7 @@ function computeStateTreeHash(entries) {
   return shamap.hash();
 }
 
-// see rippled Ledger::updateHash()
+// see divvyd Ledger::updateHash()
 function computeLedgerHash(ledgerHeader) {
   var prefix = hashprefixes.HASH_LEDGER.toString(16).toUpperCase();
   return hash(prefix +

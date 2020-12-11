@@ -50,8 +50,8 @@ describe('Ledger', function() {
     });
   });
 
-  describe('#calcRippleStateEntryHash', function() {
-    it('will calculate the RippleState entry hash for rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh and rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY in USD', function() {
+  describe('#calcDivvyStateEntryHash', function() {
+    it('will calculate the DivvyState entry hash for rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh and rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY in USD', function() {
       var account1 = 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh';
       var account2 = 'rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY';
       var currency = 'USD';
@@ -66,7 +66,7 @@ describe('Ledger', function() {
       assert.equal(actualEntryHash2, expectedEntryHash);
     });
 
-    it('will calculate the RippleState entry hash for r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV and rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj in UAM', function() {
+    it('will calculate the DivvyState entry hash for r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV and rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj in UAM', function() {
       var account1 = 'r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV';
       var account2 = 'rUAMuQTfVhbfqUDuro7zzy4jj4Wq57MPTj';
       var currency = 'UAM';
@@ -98,9 +98,9 @@ describe('Ledger', function() {
     #!/bin/bash
 
     #There's no test fixtures anywhere, but this test was verified with this.
-    #Start a rippled standalone server and issue the following commands:
+    #Start a divvyd standalone server and issue the following commands:
 
-    ./build/rippled submit "masterpassphrase" '
+    ./build/divvyd submit "masterpassphrase" '
     {
         "TransactionType":"SignerListSet",
         "Account":"rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
@@ -122,10 +122,10 @@ describe('Ledger', function() {
             }
         ]
     }'
-    ./build/rippled ledger_accept
+    ./build/divvyd ledger_accept
 
     # Get signer list information
-    build/rippled account_objects rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh
+    build/divvyd account_objects rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh
     */
     it('will calculate the SignerList index for r32UufnaCGL82HubijgJGDmdE5hac7ZvLw', function() {
       var account = 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh';

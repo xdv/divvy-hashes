@@ -1,25 +1,25 @@
 {
-  "name": "ripple-hashes",
+  "name": "divvy-hashes",
   "version": "0.3.1",
-  "description": "Compute hashes of Ripple objects",
+  "description": "Compute hashes of Divvy objects",
   "license": "ISC",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ripple/ripple-hashes.git"
+    "url": "https://github.com/xdv/divvy-hashes.git"
   },
   "main": "src/index.js",
   "keywords": [
-    "ripple",
-    "ripple-hashes"
+    "divvy",
+    "divvy-hashes"
   ],
   "dependencies": {
-    "bignumber.js": "^4.1.0",
-    "create-hash": "^1.1.2",
-    "ripple-address-codec": "^2.0.1",
-    "ripple-binary-codec": "^0.1.0"
+    "bignumber.js": "4.1.0",
+    "create-hash": "1.1.2",
+    "divvy-address-codec": "2.0.2",
+    "divvy-binary-codec": "0.2.0"
   },
   "devDependencies": {
     "mocha": "*"
